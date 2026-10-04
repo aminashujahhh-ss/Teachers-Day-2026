@@ -1,0 +1,736 @@
+/* =========================
+   TEACHER'S DAY WEBSITE
+   MAIN DESIGN
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f5eadf;
+    color: #4a352d;
+    line-height: 1.6;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    padding: 18px 25px;
+
+    background: rgba(255, 250, 245, 0.95);
+    border-bottom: 1px solid #E8D2C0;
+    box-shadow: 0 4px 15px rgba(40, 40, 80, 0.08);
+}
+
+nav a {
+    text-decoration: none;
+    color: #8b5e4a;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #8b5e4a;
+    transform: translateY(-2px);
+    text-shadow: 0 3px 12px rgba(200, 159, 130, 0.35);
+}
+
+/* =========================
+   ALL SECTIONS
+   ========================= */
+
+section {
+    min-height: 100vh;
+    padding: 90px 8%;
+    position: relative;
+}
+
+section > p:first-child {
+    letter-spacing: 3px;
+    font-size: 14px;
+    color: #6f4939;
+    text-transform: uppercase;
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.05;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin: 15px 0 20px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+/* =========================
+   HOME
+   ========================= */
+
+#home {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #e8d2c0 0%,
+            transparent 29%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            #e2c7a0 0%,
+            transparent 30%
+        ),
+        #fffaf5;
+}
+
+#home::before {
+    content: " ✧ ";
+    position: absolute;
+    right: 4%;
+    top: 24%;
+    font-size: 150px;
+    letter-spacing: 18px;
+    color: #8B5E4A;
+    opacity: 0.22;
+}
+
+#home h1 {
+    max-width: 800px;
+}
+
+#home p {
+    max-width: 650px;
+    font-size: 23px;
+}
+
+#home button {
+    width: fit-content;
+    margin-top: 30px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button {
+    border: none;
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #8b5e4a;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 8px 20px rgba(48, 59, 128, 0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #7f9272;
+}
+
+/* =========================
+   INSPIRATION
+   ========================= */
+
+#inspiration {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            #e2c7a0,
+            transparent 29%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            #E2C7A0,
+            transparent 30%
+        ),
+        #FFFAF5;
+}
+        
+#inspiration p {
+    max-width: 700px;
+    font-size: 19px;
+}
+
+/* =========================
+   JOURNEY / TIMELINE
+   ========================= */
+
+#story {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #E2C7A0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            #E8D2C0,
+            transparent 28%
+        ),
+        #FFFAF5;
+}
+
+.timeline-item {
+    position: relative;
+
+    max-width: 850px;
+
+    margin: 35px auto;
+    padding: 28px;
+
+    background: #FFF6ef;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(50, 40, 90, 0.1);
+
+    border-left: 5px solid #8b5e4a;
+
+    transition: 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateX(8px);
+}
+
+.timeline-item span {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    background: #f6d0bb;
+    color: #7e2f15;
+
+    font-weight: bold;
+}
+
+.timeline-item h3 {
+    margin-top: 12px;
+}
+
+/* =========================
+   SPECIAL CARDS
+   ========================= */
+
+.card-container,
+.cards,
+.special-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.card,
+.special-card,
+.flip-card {
+    min-height: 220px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #fda96c,
+        #e7e4ef
+    );
+
+    border: 1px solid #341703;
+    border-radius: 22px;
+
+    box-shadow: 0 10px 25px rgba(60, 50, 100, 0.12);
+
+    transition: 0.4s;
+}
+
+.card:hover,
+.special-card:hover,
+.flip-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 18px 35px rgba(60, 50, 100, 0.18);
+}
+
+/* =========================
+   QUIZ
+   ========================= */
+
+#quiz {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            #e8d2c0,
+            transparent 25%
+        ),
+        #fffaf5;
+}
+
+.quiz-box {
+    max-width: 800px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: 0 12px 35px rgba(50, 50, 90, 0.12);
+}
+
+.quiz-option {
+    display: block;
+
+    margin: 20px 0;
+    padding: 18px 22px;
+
+    min-height: 55px;
+
+    border: 1px solid #ddd5e8;
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    background: #FFFAF5;
+    transition: 0.3s;
+}
+
+.quiz-option:hover {
+    background: #f2edff;
+    transform: translateX(5px);
+}
+
+/* =========================
+   BUILT WITH INSPIRATION
+   ========================= */
+
+.tech-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.tech-card {
+    padding: 35px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(203, 203, 233, 0.1);
+
+    transition: 0.3s;
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+}
+
+/* =========================
+   MOMENTS & MEMORIES
+   ========================= */
+
+/* =========================
+   MOMENTS & MEMORIES
+   ========================= */
+
+.memory-grid > div {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.memory-grid > div:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+.memory-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 15px;
+    background: #f5eadf;
+    color: #8b5e4a;
+    font-size: 15px;
+    animation: memoryReveal 0.4s ease;
+}
+
+@keyframes memoryReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   MESSAGE
+   ========================= */
+
+#message {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            #E2C7A0,
+            transparent 25%
+        ),
+                radial-gradient(
+            circle at 10% 20%,
+            #E2C7A0,
+            transparent 25%
+        ),
+
+        #fffaf5;
+}
+
+.message-box {
+    max-width: 750px;
+
+    margin: 40px auto;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: 0 12px 35px rgba(50, 50, 90, 0.12);
+}
+
+.message-box p {
+    font-size: 19px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #8b5e4a;
+
+    color: white;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        gap: 15px;
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .card-container,
+    .cards,
+    .special-cards,
+    .tech-container,
+    .memory-container,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   INTERACTIVE EFFECTS
+   ========================= */
+
+.next-section-btn {
+    display: block;
+    margin: 45px auto 0;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #8b5e4a;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.next-section-btn:hover {
+    transform: translateY(-4px);
+    background: #6f4939;
+}
+
+/* Timeline clickable */
+
+.timeline-item {
+    cursor: pointer;
+}
+
+.timeline-item p {
+    transition: 0.4s;
+}
+
+.timeline-item.active {
+    transform: translateX(8px);
+    box-shadow: 0 15px 35px rgba(139, 94, 74, 0.18);
+}
+
+/* Flip cards */
+
+.card {
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    min-height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-back {
+    display: none;
+    padding: 20px;
+}
+
+.card.flipped .card-front {
+    display: none;
+}
+
+.card.flipped .card-back {
+    display: flex;
+}
+
+/* Quiz feedback */
+
+.quiz-option.correct {
+    background: #e2c7a0;
+    border-color: #8b5e4a;
+}
+
+.quiz-option.wrong {
+    background: #f5e1d5;
+    border-color: #b98970;
+}
+
+#quizResult {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Learning cards */
+
+.teach-cards > div {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.teach-cards > div:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* Letter */
+
+#letter {
+    display: none;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 45px;
+    background: #fffaf5;
+    border: 1px solid #e2c7a0;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(139, 94, 74, 0.15);
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.9;
+    animation: letterOpen 0.6s ease;
+}
+
+#letter.show {
+    display: block;
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Surprise */
+
+#secretMessage {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: #f5eadf;
+    color: #8b5e4a;
+    font-size: 20px;
+    display: none;
+    animation: reveal 0.6s ease;
+}
+
+#secretMessage.show {
+    display: block;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Final */
+
+#final {
+    text-align: center;
+}
+
+#final h2 {
+    color: #8b5e4a;
+    font-size: clamp(45px, 7vw, 80px);
+    animation: finalGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes finalGlow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 90px 8%;
+    position: relative;
+}
+
+/* =========================
+   NEXT SECTION BUTTON
+   ========================= */
+
+.next-section-btn {
+    display: block;
+    margin: 45px auto 0;
+
+    background: #8b5e4a;
+    color: #fffaf5;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 13px 25px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(139, 94, 74, 0.20);
+
+    transition: 0.3s;
+}
+
+.next-section-btn:hover {
+    background: #a8755d;
+    transform: translateY(-3px);
+}
